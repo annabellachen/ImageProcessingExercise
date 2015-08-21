@@ -55,8 +55,17 @@ namespace ImageProcessing
 
         public static void DoProcess(ref byte[,] rArray, ref byte[,] gArray, ref byte[,] bArray)
         {
-            //YOUR CODE HERE 
-
+            //your code here
+            for(int i=0;i<rArray.GetLength(0);i++)
+            {
+                for (int j = 0; j < rArray.GetLength(1); j++)
+                {
+                    Byte k = 3;
+                    rArray[i, j] = (byte)((rArray[i, j] + gArray[i, j] + bArray[i, j]) / k);
+                    gArray[i, j] = (byte)((rArray[i, j] + gArray[i, j] + bArray[i, j]) / k);
+                    bArray[i, j] = (byte)((rArray[i, j] + gArray[i, j] + bArray[i, j]) / k);
+                }
+            }
         }
     }
 }
